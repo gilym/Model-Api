@@ -1,7 +1,8 @@
 # Api Model
 
 ## Model Architecture
-![alt text](Model Architecture.jpeg)
+![Alt Text](https://github.com/gilym/Model-Api/blob/620611822154347d254776cd733d3437b0966805/Model%20Architecture.jpeg)
+
 
 
 ## Home Endpoint
