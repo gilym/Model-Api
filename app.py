@@ -5,6 +5,8 @@ from google.cloud import aiplatform
 from google.oauth2 import service_account
 from flask import Flask, request, jsonify
 from flask_cors import CORS
+import requests
+import json
 
 app = Flask(__name__)
 CORS(app)
@@ -52,13 +54,30 @@ def predict():
         # Find the index of the highest value
         highest_class_index = np.argmax(predicted_array)
 
-        result = {
-            'error' : False,
-            'predicted_class': str(highest_class_index),
-             'message' : "succesfull predicted"
+        url = "https://backend-dot-recipe-finder-388213.as.r.appspot.com/findfood"
+
+        # Menyiapkan data permintaan
+        data = {
+            "predicted_class": str(highest_class_index)
         }
 
-        return jsonify(result)
+        headers = {
+            "Authentication": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MzgsImlhdCI6MTY4NjUwNDI4OX0.L3QT-mSohJ1phz7cpF2b63_smqJbsfMeMxpnuezPud0",
+            "Content-Type": "application/json"
+        }
+
+        # Mengirim permintaan POST ke URL API dengan payload JSON
+        response = requests.post(url, json=data ,headers=headers)
+
+        # Mendapatkan respons dari API
+        api_response = response.json()
+
+        # Mengembalikan respons dari API sebagai respons Flask
+        return jsonify(api_response)
+
+       
+
+       
     
     except Exception as e:
         error_message = str(e)
