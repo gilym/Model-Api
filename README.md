@@ -1,7 +1,7 @@
 # Api Model
 
 ## Model Architecture
-![alt text](Database-Structure.png "Title")
+![alt text](Model Architecture.jpeg)
 
 
 ## Home Endpoint
