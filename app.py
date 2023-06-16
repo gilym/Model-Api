@@ -6,7 +6,7 @@ from google.oauth2 import service_account
 from flask import Flask, request, jsonify
 from flask_cors import CORS
 import requests
-import json
+
 
 app = Flask(__name__)
 CORS(app)
@@ -22,8 +22,7 @@ def predict():
         image_file = request.files['image']
         image = Image.open(image_file)
 
-        # Mengubah gambar menjadi array NumPy
-        x_test = np.asarray(image)
+        
         # Perform the resizing operation
         resized_image_data = image.resize((180, 180))
 
