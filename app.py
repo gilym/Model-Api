@@ -72,7 +72,7 @@ def predict():
         api_response = response.json()
 
         # Mengembalikan respons dari API sebagai respons Flask
-        return jsonify(api_response)
+        return jsonify(api_response[0])
 
        
 
