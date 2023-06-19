@@ -1,7 +1,7 @@
 # Api Model
 
 ## Model Architecture
-![Alt Text](https://github.com/gilym/Model-Api/blob/b58a7a1cf6da12082bad781371afce8a38213f4f/Model%20Architecture.png)
+![Alt Text](https://github.com/gilym/Model-Api/blob/e9051e0e32face6048d946fbf3f8c8f93c1e3954/Model%20Architecture.png)
 
 
 
